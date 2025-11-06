@@ -18,6 +18,8 @@ public class GroupEntity {
     @GeneratedValue(strategy = GenerationType.UUID)
     private String id;
 
+    private String name;
+
     @ManyToMany(mappedBy = "groupsIds")
     private List<UserEntity> users;
 

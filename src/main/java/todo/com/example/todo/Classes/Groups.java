@@ -4,6 +4,7 @@ import java.util.List;
 
 public class Groups {
     private String id;
+    private String name;
     private List<User> users;
     private List<Task> tasks;
 
@@ -11,6 +12,10 @@ public class Groups {
 
     public String getId() {
         return this.id;
+    }
+
+    public String getName() {
+        return this.name;
     }
 
     public List<User> getUsers() {
@@ -27,5 +32,9 @@ public class Groups {
 
     public void changeTasks(List<Task> tasks) {
         this.tasks = tasks;
+    }
+
+    public void changeName(String newName) {
+        this.name = newName;
     }
 }

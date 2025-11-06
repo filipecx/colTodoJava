@@ -28,7 +28,7 @@ public class UserEntity {
     @ManyToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     @JoinTable(name = "user_groups", joinColumns = @JoinColumn(name = "users_id"),
     inverseJoinColumns = @JoinColumn(name = "groups_ids"))
-    private List<Groups> groupsIds;
+    private List<GroupEntity> groupsIds;
 
 
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)

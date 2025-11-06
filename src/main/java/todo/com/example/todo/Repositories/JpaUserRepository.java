@@ -1,9 +1,7 @@
 package todo.com.example.todo.Repositories;
 
-import jdk.jfr.Registered;
 import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.stereotype.Repository;
-import todo.com.example.todo.Classes.User;
+import todo.com.example.todo.Entities.UserEntity;
 
-public interface JpaUserRepository extends JpaRepository<User, String> {
+public interface JpaUserRepository extends JpaRepository<UserEntity, String> {
 }
