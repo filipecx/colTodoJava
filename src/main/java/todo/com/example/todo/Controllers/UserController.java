@@ -36,13 +36,18 @@ public class UserController {
     @GetMapping("/{id}")
     public ResponseEntity<UserResponseDTO> getUser(@PathVariable String id) {
         Optional<UserEntity> user = this.repository.findById(id);
-        UserResponseDTO userResponseDTO = new UserResponseDTO(
-                user.get().getId(),
-                user.get().getUsername(),
-                user.get().getGroupsIds()
-        );
+        if (user.isPresent()) {
+            UserResponseDTO userResponseDTO = new UserResponseDTO(
+                    user.get().getId(),
+                    user.get().getUsername(),
+                    user.get().getGroupsIds()
+            );
 
-        return ResponseEntity.status(HttpStatus.OK).body(userResponseDTO);
+            return ResponseEntity.status(HttpStatus.OK).body(userResponseDTO);
+        }
+
+        return ResponseEntity.notFound().build();
+
 
     }
 

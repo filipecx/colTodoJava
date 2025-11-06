@@ -1,0 +1,14 @@
+package todo.com.example.todo.Dtos.Group;
+
+import todo.com.example.todo.Entities.TaskEntity;
+import todo.com.example.todo.Entities.UserEntity;
+
+import java.util.List;
+
+public record GroupResponseDTO(
+        String id,
+        String name,
+        List<UserEntity> users,
+        List<TaskEntity> tasks
+) {
+}
