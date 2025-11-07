@@ -6,19 +6,23 @@ public class Task {
     private String id;
     private String title;
     private Days day;
+    private Boolean completed;
     private final User user;
 
 
-    public Task(String title, Days day, User user) {
+    public Task(String title, Days day, Boolean completed, User user) {
         this.title = title;
-        this.user = user;
         this.day = day;
+        this.completed = completed;
+        this.user = user;
+
     }
 
-    public Task(String id, String title, Days day, User user) {
+    public Task(String id, String title, Days day, Boolean completed, User user) {
         this.id = id;
         this.title = title;
         this.day = day;
+        this.completed = completed;
         this.user = user;
     }
 
@@ -34,6 +38,10 @@ public class Task {
         return this.day;
     }
 
+    public Boolean getCompleted() {
+        return this.completed;
+    }
+
     public User getUser() {
         return this.user;
     }
@@ -44,5 +52,10 @@ public class Task {
 
     public void changeDay(Days newDay) {
         this.day = newDay;
+    }
+
+    public Boolean changeCompleted() {
+        this.completed = !completed;
+        return this.completed;
     }
 }

@@ -76,7 +76,7 @@ public class GroupController {
         return ResponseEntity.status(HttpStatus.CREATED).body(updatedGroup);
     }
 
-    @DeleteMapping("/{id")
+    @DeleteMapping("/{id}")
     public ResponseEntity<String> deleteGroup(@PathVariable String id) {
         this.repository.deleteById(id);
         return ResponseEntity.noContent().build();

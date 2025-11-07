@@ -22,6 +22,8 @@ public class TaskEntity {
     @Enumerated(EnumType.STRING)
     private Days day;
 
+    private Boolean completed;
+
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "user_id")
     private UserEntity user;
